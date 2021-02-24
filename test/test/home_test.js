@@ -16,13 +16,13 @@ fixture `Delete`
       await t.navigateTo(pageUrl);
   });
 
-test.skip('Delete User', async t => {   
+test('Delete User', async t => {   
   await home.deleteUser();
 
   await t.expect(Selector('ul > li:nth-child(2)').exists).notOk('Element not deleted');
 });
 
-test.skip('Logout', async t => {   
+test('Logout', async t => {   
   await home.clickLogout();
 
   const getPageUrl = ClientFunction(() => window.location.href);

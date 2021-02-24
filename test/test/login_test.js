@@ -15,7 +15,7 @@ fixture `Login`
     await t.navigateTo(pageUrl);
   });
 
-test.skip('Successful Login', async t => {  
+test('Successful Login', async t => {  
   await login.typeUserName('testui');
   await login.typePassword('test');
   await login.submitLogin();
@@ -23,7 +23,7 @@ test.skip('Successful Login', async t => {
   await t.expect(login.loginSuccessfulMsg.innerText).eql("You're logged in with React!!");
 });
 
-test.skip('Required Fields Login', async t => {
+test('Required Fields Login', async t => {
   await login.submitLogin();
 
   await t.expect(login.userNameRequired.innerText).eql("Username is required");
